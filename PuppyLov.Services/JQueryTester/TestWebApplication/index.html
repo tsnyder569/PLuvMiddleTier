@@ -1,0 +1,68 @@
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+	<h1>WCF Service with CORS and JQuery Test Page</h1>
+	<div id="results" style="border:1px solid black;width:450px;min-height:150px;"></div>
+	
+	<script>
+		$.support.cors = true;
+		
+		var myUserName = 'Test';
+		var myUserPassword = 'test1234';
+		var serviceUrl = 'http://localhost:24706/';
+		
+		function getHeaders() {
+			 //btoa is a built in browser cmd for encode Base64
+			return { 'Authorization': "Basic " + btoa("test:testpw") };
+		}
+		
+		//GetItems
+		$.ajax({
+			headers: getHeaders(),
+			url: serviceUrl + "MyService.svc/Items",
+			type: "GET",
+			// tell jQuery we're expecting JSONP
+			dataType: "json",
+			// work with the response
+			success: function( response ) {
+				console.log( response );
+				$('#results').append('<p>Testing GetItems Service...</p>').append('<code>'+ JSON.stringify(response) +'</code>');
+			},
+			error: function (xhr) { console.log(xhr.responseText); }
+		});
+		
+		//GetItem
+		$.ajax({
+			headers: getHeaders(),
+			url: serviceUrl + "MyService.svc/ItemData/44",
+			type: "GET",
+			// tell jQuery we're expecting JSONP
+			dataType: "json",
+			// work with the response
+			success: function( response ) {
+				console.log( response );
+				$('#results').append('<p>Testing GetItem Service...</p>').append('<code>'+ JSON.stringify(response) +'</code>');
+			},
+			error: function (xhr) { console.log(xhr.responseText); }
+		});
+		
+		//Update
+		$.ajax({
+			headers: getHeaders(),
+			url: serviceUrl + "MyService.svc/Update",
+			contentType: "application/json",
+			dataType: "json",
+			type: "POST",
+			data: JSON.stringify({ ID: "6", Name: "TEST", BackgroundColor: "000", FontColor: "fff" }),
+			// work with the response
+			success: function( response ) {
+				console.log( response ); // server response
+				$('#results').append('<p>Testing Update Service...</p>').append('<code>'+ JSON.stringify(response) +'</code>');
+			},
+			error: function (xhr) { console.log(xhr.responseText); }
+		});
+	</script>
+</body>
+</html>

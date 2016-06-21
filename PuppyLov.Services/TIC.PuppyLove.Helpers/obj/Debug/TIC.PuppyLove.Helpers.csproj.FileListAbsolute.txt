@@ -1,0 +1,9 @@
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Helpers\bin\Debug\TIC.PuppyLove.Helpers.dll
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Helpers\bin\Debug\TIC.PuppyLove.Helpers.pdb
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Helpers\bin\Debug\Newtonsoft.Json.dll
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Helpers\bin\Debug\Newtonsoft.Json.xml
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Helpers\obj\Debug\TIC.PuppyLove.Helpers.Resource.resources
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Helpers\obj\Debug\TIC.PuppyLove.Helpers.csproj.GenerateResource.Cache
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Helpers\obj\Debug\TIC.PuppyLove.Helpers.dll
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Helpers\obj\Debug\TIC.PuppyLove.Helpers.pdb
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Helpers\obj\Debug\TIC.PuppyLove.Helpers.csprojResolveAssemblyReference.cache

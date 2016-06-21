@@ -1,0 +1,246 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Profile.ServicesHost", "TIC.PuppyLove.Profile.ServiceHost\TIC.PuppyLove.Profile.ServicesHost.csproj", "{AA7E0B36-52B6-4472-A2DC-DFEF141BAF8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Services.Contracts.Profile", "TIC.PuppyLove.Services.Contracts.Profile\TIC.PuppyLove.Services.Contracts.Profile.csproj", "{A8AFA77F-9193-48B6-905A-5014DF7D4705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Services.Contracts.Common", "TIC.PuppyLove.Services.Contracts.Common\TIC.PuppyLove.Services.Contracts.Common.csproj", "{7FAA9F71-2830-4DD7-BCD4-5DB5DF553C57}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contract Librearies", "Contract Librearies", "{0B48E3DC-4C9E-445A-ADB0-47070BA49790}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic Libraries", "Logic Libraries", "{3A0A9043-4DB5-41DD-9F86-6F989A5FC654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Services.Logic.Profile", "TIC.PuppyLove.Services.Logic.Profile\TIC.PuppyLove.Services.Logic.Profile.csproj", "{754189C8-313C-477B-8B5E-2F38AFFB3E5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Libraries", "Test Libraries", "{BEC43180-18FB-40D7-80F2-29F51BD2CEE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{35767CC7-AA4E-4DB8-BD2D-5888EE4FD3E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Helpers", "TIC.PuppyLove.Helpers\TIC.PuppyLove.Helpers.csproj", "{F10ECC18-7B7F-48DC-972F-14CCBFAB8FBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Profile.Service.UnitTest", "TIC.PuppyLove.Profile.Service.UnitTest\TIC.PuppyLove.Profile.Service.UnitTest.csproj", "{9E784767-6BD0-48C2-8D48-95A481CCC6EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Services.Contracts.Location", "TIC.PuppyLove.Services.Contracts.Location\TIC.PuppyLove.Services.Contracts.Location.csproj", "{51FC7FD0-617A-41D6-94EA-D7CCCAA60A72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Services.Logic.Location", "TIC.PuppyLove.Services.Logic.Location\TIC.PuppyLove.Services.Logic.Location.csproj", "{63D70E00-62EB-4271-834D-811F471BCDA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Location.ServicesHost", "TIC.PuppyLove.Location.ServicesHost\TIC.PuppyLove.Location.ServicesHost.csproj", "{45F8BBC0-DFC1-4B53-9518-31A839C0D4EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Location.Service.UnitTest", "TIC.PuppyLove.Location.Service.UnitTest\TIC.PuppyLove.Location.Service.UnitTest.csproj", "{892E4B7B-8944-46A8-ABF5-DB27ACBE7CC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Profile.Data.UnitTest", "TIC.PuppyLove.Profile.Data.UnitTest\TIC.PuppyLove.Profile.Data.UnitTest.csproj", "{A0A97EAF-78D8-4BF4-99F4-ECDB2F8DC817}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Model", "Data Model", "{12C959BB-50CA-4763-AE11-0CB4D411989B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Profile.DataModel", "TIC.PuppyLove.Profile.DataModel\TIC.PuppyLove.Profile.DataModel.csproj", "{BD91D06C-F8B0-490B-9233-BA6235031C12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Helpers.UnitTest", "TIC.PuppyLove.Helpers.UnitTest\TIC.PuppyLove.Helpers.UnitTest.csproj", "{364701E8-34C2-4FCA-AED1-56A12B09DA88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Services.Contracts.Match", "TIC.PuppyLove.Services.Contracts.Match\TIC.PuppyLove.Services.Contracts.Match.csproj", "{D06BE781-F836-4955-B289-4A96832E8027}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Services.Logic.Match", "TIC.PuppyLove.Services.Logic.Match\TIC.PuppyLove.Services.Logic.Match.csproj", "{E6AECCB9-7E5D-42FF-AD84-1AD9E01C65C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Services.Contracts.Config", "TIC.PuppyLove.Services.Contracts.Config\TIC.PuppyLove.Services.Contracts.Config.csproj", "{FECF51F4-0918-4459-88CE-08338CC4385E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Services.Logic.Config", "TIC.PuppyLove.Services.Logic.Config\TIC.PuppyLove.Services.Logic.Config.csproj", "{788436FE-22D4-44C6-BD73-8151293B1AC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Config.ServicesHost", "TIC.PuppyLove.Config.ServicesHost\TIC.PuppyLove.Config.ServicesHost.csproj", "{DE8B2699-3355-443C-902E-38B7E7D5C28A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.ConfigV2.Service.UnitTest", "TIC.PuppyLove.ConfigV2.Service.UnitTest\TIC.PuppyLove.ConfigV2.Service.UnitTest.csproj", "{936A6CB6-3B01-4286-8357-919F929A8577}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIC.PuppyLove.Match.ServicesHost", "TIC.PuppyLove.Match.ServicesHost\TIC.PuppyLove.Match.ServicesHost.csproj", "{8FBF790B-DDF4-4EA9-82B7-B08953343B7A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 21
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.ventera.com:8080/tfs/ticcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TIC.PuppyLove.Helpers\\TIC.PuppyLove.Helpers.csproj
+		SccProjectTopLevelParentUniqueName1 = PuppyLov.Services.sln
+		SccProjectName1 = TIC.PuppyLove.Helpers
+		SccLocalPath1 = TIC.PuppyLove.Helpers
+		SccProjectUniqueName2 = TIC.PuppyLove.Profile.Service.UnitTest\\TIC.PuppyLove.Profile.Service.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName2 = PuppyLov.Services.sln
+		SccProjectName2 = TIC.PuppyLove.Profile.Service.UnitTest
+		SccLocalPath2 = TIC.PuppyLove.Profile.Service.UnitTest
+		SccProjectUniqueName3 = TIC.PuppyLove.Services.Contracts.Common\\TIC.PuppyLove.Services.Contracts.Common.csproj
+		SccProjectTopLevelParentUniqueName3 = PuppyLov.Services.sln
+		SccProjectName3 = TIC.PuppyLove.Services.Contracts.Common
+		SccLocalPath3 = TIC.PuppyLove.Services.Contracts.Common
+		SccProjectUniqueName4 = TIC.PuppyLove.Services.Contracts.Profile\\TIC.PuppyLove.Services.Contracts.Profile.csproj
+		SccProjectTopLevelParentUniqueName4 = PuppyLov.Services.sln
+		SccProjectName4 = TIC.PuppyLove.Services.Contracts.Profile
+		SccLocalPath4 = TIC.PuppyLove.Services.Contracts.Profile
+		SccProjectUniqueName5 = TIC.PuppyLove.Services.Logic.Profile\\TIC.PuppyLove.Services.Logic.Profile.csproj
+		SccProjectTopLevelParentUniqueName5 = PuppyLov.Services.sln
+		SccProjectName5 = TIC.PuppyLove.Services.Logic.Profile
+		SccLocalPath5 = TIC.PuppyLove.Services.Logic.Profile
+		SccProjectUniqueName6 = TIC.PuppyLove.Services.Contracts.Location\\TIC.PuppyLove.Services.Contracts.Location.csproj
+		SccProjectTopLevelParentUniqueName6 = PuppyLov.Services.sln
+		SccProjectName6 = TIC.PuppyLove.Services.Contracts.Location
+		SccLocalPath6 = TIC.PuppyLove.Services.Contracts.Location
+		SccProjectUniqueName7 = TIC.PuppyLove.Services.Logic.Location\\TIC.PuppyLove.Services.Logic.Location.csproj
+		SccProjectTopLevelParentUniqueName7 = PuppyLov.Services.sln
+		SccProjectName7 = TIC.PuppyLove.Services.Logic.Location
+		SccLocalPath7 = TIC.PuppyLove.Services.Logic.Location
+		SccProjectUniqueName8 = TIC.PuppyLove.Location.ServicesHost\\TIC.PuppyLove.Location.ServicesHost.csproj
+		SccProjectName8 = TIC.PuppyLove.Location.ServicesHost
+		SccLocalPath8 = TIC.PuppyLove.Location.ServicesHost
+		SccProjectUniqueName9 = TIC.PuppyLove.Location.Service.UnitTest\\TIC.PuppyLove.Location.Service.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName9 = PuppyLov.Services.sln
+		SccProjectName9 = TIC.PuppyLove.Location.Service.UnitTest
+		SccLocalPath9 = TIC.PuppyLove.Location.Service.UnitTest
+		SccProjectUniqueName10 = TIC.PuppyLove.Profile.Data.UnitTest\\TIC.PuppyLove.Profile.Data.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName10 = PuppyLov.Services.sln
+		SccProjectName10 = TIC.PuppyLove.Profile.Data.UnitTest
+		SccLocalPath10 = TIC.PuppyLove.Profile.Data.UnitTest
+		SccProjectUniqueName11 = TIC.PuppyLove.Profile.DataModel\\TIC.PuppyLove.Profile.DataModel.csproj
+		SccProjectTopLevelParentUniqueName11 = PuppyLov.Services.sln
+		SccProjectName11 = TIC.PuppyLove.Profile.DataModel
+		SccLocalPath11 = TIC.PuppyLove.Profile.DataModel
+		SccProjectUniqueName12 = TIC.PuppyLove.Helpers.UnitTest\\TIC.PuppyLove.Helpers.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName12 = PuppyLov.Services.sln
+		SccProjectName12 = TIC.PuppyLove.Helpers.UnitTest
+		SccLocalPath12 = TIC.PuppyLove.Helpers.UnitTest
+		SccProjectUniqueName13 = TIC.PuppyLove.Services.Contracts.Match\\TIC.PuppyLove.Services.Contracts.Match.csproj
+		SccProjectTopLevelParentUniqueName13 = PuppyLov.Services.sln
+		SccProjectName13 = TIC.PuppyLove.Services.Contracts.Match
+		SccLocalPath13 = TIC.PuppyLove.Services.Contracts.Match
+		SccProjectUniqueName14 = TIC.PuppyLove.Services.Logic.Match\\TIC.PuppyLove.Services.Logic.Match.csproj
+		SccProjectTopLevelParentUniqueName14 = PuppyLov.Services.sln
+		SccProjectName14 = TIC.PuppyLove.Services.Logic.Match
+		SccLocalPath14 = TIC.PuppyLove.Services.Logic.Match
+		SccProjectUniqueName15 = TIC.PuppyLove.Services.Contracts.Config\\TIC.PuppyLove.Services.Contracts.Config.csproj
+		SccProjectTopLevelParentUniqueName15 = PuppyLov.Services.sln
+		SccProjectName15 = TIC.PuppyLove.Services.Contracts.Config
+		SccLocalPath15 = TIC.PuppyLove.Services.Contracts.Config
+		SccProjectUniqueName16 = TIC.PuppyLove.Services.Logic.Config\\TIC.PuppyLove.Services.Logic.Config.csproj
+		SccProjectTopLevelParentUniqueName16 = PuppyLov.Services.sln
+		SccProjectName16 = TIC.PuppyLove.Services.Logic.Config
+		SccLocalPath16 = TIC.PuppyLove.Services.Logic.Config
+		SccProjectUniqueName17 = TIC.PuppyLove.Config.ServicesHost\\TIC.PuppyLove.Config.ServicesHost.csproj
+		SccProjectName17 = TIC.PuppyLove.Config.ServicesHost
+		SccLocalPath17 = TIC.PuppyLove.Config.ServicesHost
+		SccProjectUniqueName18 = TIC.PuppyLove.ConfigV2.Service.UnitTest\\TIC.PuppyLove.ConfigV2.Service.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName18 = PuppyLov.Services.sln
+		SccProjectName18 = TIC.PuppyLove.ConfigV2.Service.UnitTest
+		SccLocalPath18 = TIC.PuppyLove.ConfigV2.Service.UnitTest
+		SccProjectUniqueName19 = TIC.PuppyLove.Profile.ServiceHost\\TIC.PuppyLove.Profile.ServicesHost.csproj
+		SccProjectName19 = TIC.PuppyLove.Profile.ServiceHost
+		SccLocalPath19 = TIC.PuppyLove.Profile.ServiceHost
+		SccProjectUniqueName20 = TIC.PuppyLove.Match.ServicesHost\\TIC.PuppyLove.Match.ServicesHost.csproj
+		SccProjectName20 = TIC.PuppyLove.Match.ServicesHost
+		SccLocalPath20 = TIC.PuppyLove.Match.ServicesHost
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA7E0B36-52B6-4472-A2DC-DFEF141BAF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA7E0B36-52B6-4472-A2DC-DFEF141BAF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA7E0B36-52B6-4472-A2DC-DFEF141BAF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA7E0B36-52B6-4472-A2DC-DFEF141BAF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8AFA77F-9193-48B6-905A-5014DF7D4705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8AFA77F-9193-48B6-905A-5014DF7D4705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8AFA77F-9193-48B6-905A-5014DF7D4705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8AFA77F-9193-48B6-905A-5014DF7D4705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FAA9F71-2830-4DD7-BCD4-5DB5DF553C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FAA9F71-2830-4DD7-BCD4-5DB5DF553C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FAA9F71-2830-4DD7-BCD4-5DB5DF553C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FAA9F71-2830-4DD7-BCD4-5DB5DF553C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{754189C8-313C-477B-8B5E-2F38AFFB3E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{754189C8-313C-477B-8B5E-2F38AFFB3E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{754189C8-313C-477B-8B5E-2F38AFFB3E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{754189C8-313C-477B-8B5E-2F38AFFB3E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10ECC18-7B7F-48DC-972F-14CCBFAB8FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10ECC18-7B7F-48DC-972F-14CCBFAB8FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10ECC18-7B7F-48DC-972F-14CCBFAB8FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10ECC18-7B7F-48DC-972F-14CCBFAB8FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E784767-6BD0-48C2-8D48-95A481CCC6EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E784767-6BD0-48C2-8D48-95A481CCC6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E784767-6BD0-48C2-8D48-95A481CCC6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E784767-6BD0-48C2-8D48-95A481CCC6EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51FC7FD0-617A-41D6-94EA-D7CCCAA60A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51FC7FD0-617A-41D6-94EA-D7CCCAA60A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51FC7FD0-617A-41D6-94EA-D7CCCAA60A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51FC7FD0-617A-41D6-94EA-D7CCCAA60A72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D70E00-62EB-4271-834D-811F471BCDA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D70E00-62EB-4271-834D-811F471BCDA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D70E00-62EB-4271-834D-811F471BCDA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D70E00-62EB-4271-834D-811F471BCDA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45F8BBC0-DFC1-4B53-9518-31A839C0D4EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F8BBC0-DFC1-4B53-9518-31A839C0D4EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F8BBC0-DFC1-4B53-9518-31A839C0D4EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F8BBC0-DFC1-4B53-9518-31A839C0D4EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{892E4B7B-8944-46A8-ABF5-DB27ACBE7CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{892E4B7B-8944-46A8-ABF5-DB27ACBE7CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{892E4B7B-8944-46A8-ABF5-DB27ACBE7CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{892E4B7B-8944-46A8-ABF5-DB27ACBE7CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0A97EAF-78D8-4BF4-99F4-ECDB2F8DC817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0A97EAF-78D8-4BF4-99F4-ECDB2F8DC817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0A97EAF-78D8-4BF4-99F4-ECDB2F8DC817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0A97EAF-78D8-4BF4-99F4-ECDB2F8DC817}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD91D06C-F8B0-490B-9233-BA6235031C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD91D06C-F8B0-490B-9233-BA6235031C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD91D06C-F8B0-490B-9233-BA6235031C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD91D06C-F8B0-490B-9233-BA6235031C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{364701E8-34C2-4FCA-AED1-56A12B09DA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{364701E8-34C2-4FCA-AED1-56A12B09DA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{364701E8-34C2-4FCA-AED1-56A12B09DA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{364701E8-34C2-4FCA-AED1-56A12B09DA88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D06BE781-F836-4955-B289-4A96832E8027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D06BE781-F836-4955-B289-4A96832E8027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D06BE781-F836-4955-B289-4A96832E8027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D06BE781-F836-4955-B289-4A96832E8027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6AECCB9-7E5D-42FF-AD84-1AD9E01C65C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6AECCB9-7E5D-42FF-AD84-1AD9E01C65C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6AECCB9-7E5D-42FF-AD84-1AD9E01C65C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6AECCB9-7E5D-42FF-AD84-1AD9E01C65C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FECF51F4-0918-4459-88CE-08338CC4385E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECF51F4-0918-4459-88CE-08338CC4385E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECF51F4-0918-4459-88CE-08338CC4385E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECF51F4-0918-4459-88CE-08338CC4385E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{788436FE-22D4-44C6-BD73-8151293B1AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{788436FE-22D4-44C6-BD73-8151293B1AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{788436FE-22D4-44C6-BD73-8151293B1AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{788436FE-22D4-44C6-BD73-8151293B1AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8B2699-3355-443C-902E-38B7E7D5C28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8B2699-3355-443C-902E-38B7E7D5C28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8B2699-3355-443C-902E-38B7E7D5C28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8B2699-3355-443C-902E-38B7E7D5C28A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{936A6CB6-3B01-4286-8357-919F929A8577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{936A6CB6-3B01-4286-8357-919F929A8577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{936A6CB6-3B01-4286-8357-919F929A8577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{936A6CB6-3B01-4286-8357-919F929A8577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FBF790B-DDF4-4EA9-82B7-B08953343B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FBF790B-DDF4-4EA9-82B7-B08953343B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FBF790B-DDF4-4EA9-82B7-B08953343B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FBF790B-DDF4-4EA9-82B7-B08953343B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7FAA9F71-2830-4DD7-BCD4-5DB5DF553C57} = {0B48E3DC-4C9E-445A-ADB0-47070BA49790}
+		{A8AFA77F-9193-48B6-905A-5014DF7D4705} = {0B48E3DC-4C9E-445A-ADB0-47070BA49790}
+		{51FC7FD0-617A-41D6-94EA-D7CCCAA60A72} = {0B48E3DC-4C9E-445A-ADB0-47070BA49790}
+		{D06BE781-F836-4955-B289-4A96832E8027} = {0B48E3DC-4C9E-445A-ADB0-47070BA49790}
+		{FECF51F4-0918-4459-88CE-08338CC4385E} = {0B48E3DC-4C9E-445A-ADB0-47070BA49790}
+		{754189C8-313C-477B-8B5E-2F38AFFB3E5E} = {3A0A9043-4DB5-41DD-9F86-6F989A5FC654}
+		{63D70E00-62EB-4271-834D-811F471BCDA6} = {3A0A9043-4DB5-41DD-9F86-6F989A5FC654}
+		{E6AECCB9-7E5D-42FF-AD84-1AD9E01C65C6} = {3A0A9043-4DB5-41DD-9F86-6F989A5FC654}
+		{788436FE-22D4-44C6-BD73-8151293B1AC5} = {3A0A9043-4DB5-41DD-9F86-6F989A5FC654}
+		{9E784767-6BD0-48C2-8D48-95A481CCC6EF} = {BEC43180-18FB-40D7-80F2-29F51BD2CEE0}
+		{892E4B7B-8944-46A8-ABF5-DB27ACBE7CC6} = {BEC43180-18FB-40D7-80F2-29F51BD2CEE0}
+		{A0A97EAF-78D8-4BF4-99F4-ECDB2F8DC817} = {BEC43180-18FB-40D7-80F2-29F51BD2CEE0}
+		{364701E8-34C2-4FCA-AED1-56A12B09DA88} = {BEC43180-18FB-40D7-80F2-29F51BD2CEE0}
+		{936A6CB6-3B01-4286-8357-919F929A8577} = {BEC43180-18FB-40D7-80F2-29F51BD2CEE0}
+		{F10ECC18-7B7F-48DC-972F-14CCBFAB8FBC} = {35767CC7-AA4E-4DB8-BD2D-5888EE4FD3E0}
+		{BD91D06C-F8B0-490B-9233-BA6235031C12} = {12C959BB-50CA-4763-AE11-0CB4D411989B}
+	EndGlobalSection
+EndGlobal

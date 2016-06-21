@@ -1,0 +1,7 @@
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Location\bin\Debug\TIC.PuppyLove.Services.Contracts.Location.dll
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Location\bin\Debug\TIC.PuppyLove.Services.Contracts.Location.pdb
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Location\bin\Debug\TIC.PuppyLove.Services.Contracts.Common.dll
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Location\bin\Debug\TIC.PuppyLove.Services.Contracts.Common.pdb
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Location\obj\Debug\TIC.PuppyLove.Services.Contracts.Location.csprojResolveAssemblyReference.cache
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Location\obj\Debug\TIC.PuppyLove.Services.Contracts.Location.dll
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Location\obj\Debug\TIC.PuppyLove.Services.Contracts.Location.pdb

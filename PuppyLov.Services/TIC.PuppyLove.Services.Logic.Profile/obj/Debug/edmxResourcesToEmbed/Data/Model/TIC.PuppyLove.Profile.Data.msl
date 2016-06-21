@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TICPuppyLoveServicesDataProfileStoreContainer" CdmEntityContainer="TICPuppyLoveProfileEntities">
+    <EntitySetMapping Name="Attributes">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.Services.Data.Profile.Attribute">
+        <MappingFragment StoreEntitySet="Attributes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.Services.Data.Profile.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfileChocies">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.Services.Data.Profile.ProfileChocy">
+        <MappingFragment StoreEntitySet="ProfileChocies">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ChoiceType" ColumnName="ChoiceType" />
+          <ScalarProperty Name="ProfileChoiceUserID" ColumnName="ProfileChoiceUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ref_ChoiceType">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.Services.Data.Profile.Ref_ChoiceType">
+        <MappingFragment StoreEntitySet="Ref_ChoiceType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MatchType" ColumnName="MatchType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ref_QuestionType">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.Services.Data.Profile.Ref_QuestionType">
+        <MappingFragment StoreEntitySet="Ref_QuestionType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Responses">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.Services.Data.Profile.Respons">
+        <MappingFragment StoreEntitySet="Responses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AttributeID" ColumnName="AttributeID" />
+          <ScalarProperty Name="Responses" ColumnName="Responses" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.Services.Data.Profile.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserResponses">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.Services.Data.Profile.UserRespons">
+        <MappingFragment StoreEntitySet="UserResponses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ResponseID" ColumnName="ResponseID" />
+          <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

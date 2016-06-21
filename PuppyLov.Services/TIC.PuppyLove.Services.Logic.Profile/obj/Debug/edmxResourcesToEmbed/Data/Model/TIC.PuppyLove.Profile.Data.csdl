@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TIC.PuppyLove.Services.Data.Profile" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Attribute">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="QuestionTypeID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Ref_QuestionType" Relationship="Self.FK_Attributes_Ref_QuestionType" FromRole="Attributes" ToRole="Ref_QuestionType" />
+    <NavigationProperty Name="Responses" Relationship="Self.FK_Responses_Attributes" FromRole="Attributes" ToRole="Responses" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int64" Nullable="false" />
+    <Property Name="Latitude" Type="Decimal" Precision="10" Scale="6" Nullable="false" />
+    <Property Name="Longitude" Type="Decimal" Precision="10" Scale="6" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Location_User" FromRole="Location" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ProfileChocy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int64" Nullable="false" />
+    <Property Name="ChoiceType" Type="Int64" Nullable="false" />
+    <Property Name="ProfileChoiceUserID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Ref_ChoiceType" Relationship="Self.FK_ProfileChocies_Ref_MatchType" FromRole="ProfileChocies" ToRole="Ref_ChoiceType" />
+    <NavigationProperty Name="User" Relationship="Self.FK_ProfileChocies_User" FromRole="ProfileChocies" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_ProfileChocies_User_02" FromRole="ProfileChocies" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Ref_ChoiceType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MatchType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ProfileChocies" Relationship="Self.FK_ProfileChocies_Ref_MatchType" FromRole="Ref_ChoiceType" ToRole="ProfileChocies" />
+  </EntityType>
+  <EntityType Name="Ref_QuestionType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Attributes" Relationship="Self.FK_Attributes_Ref_QuestionType" FromRole="Ref_QuestionType" ToRole="Attributes" />
+    <NavigationProperty Name="UserResponses" Relationship="Self.FK_UserResponses_Ref_QuestionType" FromRole="Ref_QuestionType" ToRole="UserResponses" />
+  </EntityType>
+  <EntityType Name="Respons">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttributeID" Type="Int64" Nullable="false" />
+    <Property Name="Responses" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Attribute" Relationship="Self.FK_Responses_Attributes" FromRole="Responses" ToRole="Attributes" />
+    <NavigationProperty Name="UserResponses" Relationship="Self.FK_UserResponses_Responses" FromRole="Responses" ToRole="UserResponses" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
+    <Property Name="DisplayName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <NavigationProperty Name="Locations" Relationship="Self.FK_Location_User" FromRole="User" ToRole="Location" />
+    <NavigationProperty Name="ProfileChocies" Relationship="Self.FK_ProfileChocies_User" FromRole="User" ToRole="ProfileChocies" />
+    <NavigationProperty Name="ProfileChocies1" Relationship="Self.FK_ProfileChocies_User_02" FromRole="User" ToRole="ProfileChocies" />
+    <NavigationProperty Name="UserResponses" Relationship="Self.FK_UserResponses_User" FromRole="User" ToRole="UserResponses" />
+  </EntityType>
+  <EntityType Name="UserRespons">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int64" Nullable="false" />
+    <Property Name="ResponseID" Type="Int64" Nullable="false" />
+    <Property Name="QuestionTypeID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Ref_QuestionType" Relationship="Self.FK_UserResponses_Ref_QuestionType" FromRole="UserResponses" ToRole="Ref_QuestionType" />
+    <NavigationProperty Name="Respons" Relationship="Self.FK_UserResponses_Responses" FromRole="UserResponses" ToRole="Responses" />
+    <NavigationProperty Name="User" Relationship="Self.FK_UserResponses_User" FromRole="UserResponses" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Attributes_Ref_QuestionType">
+    <End Role="Ref_QuestionType" Type="Self.Ref_QuestionType" Multiplicity="1" />
+    <End Role="Attributes" Type="Self.Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref_QuestionType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Attributes">
+        <PropertyRef Name="QuestionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Responses_Attributes">
+    <End Role="Attributes" Type="Self.Attribute" Multiplicity="1" />
+    <End Role="Responses" Type="Self.Respons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attributes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Responses">
+        <PropertyRef Name="AttributeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileChocies_Ref_MatchType">
+    <End Role="Ref_ChoiceType" Type="Self.Ref_ChoiceType" Multiplicity="1" />
+    <End Role="ProfileChocies" Type="Self.ProfileChocy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref_ChoiceType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfileChocies">
+        <PropertyRef Name="ChoiceType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileChocies_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="ProfileChocies" Type="Self.ProfileChocy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfileChocies">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileChocies_User_02">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="ProfileChocies" Type="Self.ProfileChocy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfileChocies">
+        <PropertyRef Name="ProfileChoiceUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserResponses_Ref_QuestionType">
+    <End Role="Ref_QuestionType" Type="Self.Ref_QuestionType" Multiplicity="1" />
+    <End Role="UserResponses" Type="Self.UserRespons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref_QuestionType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserResponses">
+        <PropertyRef Name="QuestionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserResponses_Responses">
+    <End Role="Responses" Type="Self.Respons" Multiplicity="1" />
+    <End Role="UserResponses" Type="Self.UserRespons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Responses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserResponses">
+        <PropertyRef Name="ResponseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserResponses_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserResponses" Type="Self.UserRespons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserResponses">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TICPuppyLoveProfileEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Attributes" EntityType="Self.Attribute" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
+    <EntitySet Name="ProfileChocies" EntityType="Self.ProfileChocy" />
+    <EntitySet Name="Ref_ChoiceType" EntityType="Self.Ref_ChoiceType" />
+    <EntitySet Name="Ref_QuestionType" EntityType="Self.Ref_QuestionType" />
+    <EntitySet Name="Responses" EntityType="Self.Respons" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserResponses" EntityType="Self.UserRespons" />
+    <AssociationSet Name="FK_Attributes_Ref_QuestionType" Association="Self.FK_Attributes_Ref_QuestionType">
+      <End Role="Ref_QuestionType" EntitySet="Ref_QuestionType" />
+      <End Role="Attributes" EntitySet="Attributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Responses_Attributes" Association="Self.FK_Responses_Attributes">
+      <End Role="Attributes" EntitySet="Attributes" />
+      <End Role="Responses" EntitySet="Responses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_User" Association="Self.FK_Location_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileChocies_Ref_MatchType" Association="Self.FK_ProfileChocies_Ref_MatchType">
+      <End Role="Ref_ChoiceType" EntitySet="Ref_ChoiceType" />
+      <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileChocies_User" Association="Self.FK_ProfileChocies_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileChocies_User_02" Association="Self.FK_ProfileChocies_User_02">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserResponses_Ref_QuestionType" Association="Self.FK_UserResponses_Ref_QuestionType">
+      <End Role="Ref_QuestionType" EntitySet="Ref_QuestionType" />
+      <End Role="UserResponses" EntitySet="UserResponses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserResponses_Responses" Association="Self.FK_UserResponses_Responses">
+      <End Role="Responses" EntitySet="Responses" />
+      <End Role="UserResponses" EntitySet="UserResponses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserResponses_User" Association="Self.FK_UserResponses_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserResponses" EntitySet="UserResponses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

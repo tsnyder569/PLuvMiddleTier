@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="58d2162a875e4216be3941988609b360" Name="Diagram1" ZoomLevel="106">
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.Attribute" Width="1.5" PointX="1.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.Location" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.ProfileChocy" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.Ref_ChoiceType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.Ref_QuestionType" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.User" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.UserRespons" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_Attributes_Ref_QuestionType" ManuallyRouted="false" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_Location_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_ProfileChocies_Ref_MatchType" ManuallyRouted="false" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_ProfileChocies_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_ProfileChocies_User_02" ManuallyRouted="false" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_UserResponses_Ref_QuestionType" ManuallyRouted="false" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_UserResponses_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.Ref_ResponseType" Width="1.5" PointX="0.75" PointY="10.875" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_Attributes_Ref_ResponseType" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_UserResponses_Ref_ResponseType" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.Respons" Width="1.5" PointX="3" PointY="10.875" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_Responses_Ref_ResponseType" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_UserResponses_Responses" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.Ref_Config" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.Photo" Width="1.5" PointX="6" PointY="4.75" />
+        <EntityTypeShape EntityType="TIC.PuppyLove.DataModel.Ref_PhotoType" Width="1.5" PointX="3.75" PointY="14.125" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_Photo_Ref_PhotoType" />
+        <AssociationConnector Association="TIC.PuppyLove.DataModel.FK_Photo_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

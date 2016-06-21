@@ -1,0 +1,853 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TIC.PuppyLove.DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Attributes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="QuestionTypeID" Type="bigint" Nullable="false" />
+          <Property Name="ResponseTypeID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="Latitude" Type="numeric" Precision="18" Scale="15" Nullable="false" />
+          <Property Name="Longitude" Type="numeric" Precision="18" Scale="15" Nullable="false" />
+          <Property Name="Accuracy" Type="numeric" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="TimeStamp" Type="numeric" Precision="13" Scale="0" Nullable="false" />
+          <Property Name="SpatialLocation" Type="geography" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhotoImage" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PhotoTypeID" Type="bigint" Nullable="false" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="IsPrimary" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProfileChocies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="ChoiceType" Type="bigint" Nullable="false" />
+          <Property Name="ProfileChoiceUserID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ref_ChoiceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MatchType" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ref_Config">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Value" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ref_PhotoType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhotoType" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ref_QuestionType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionType" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ref_ResponseType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResponseType" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Responses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Responses" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ResponseTypeID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DisplayName" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="500" />
+          <Property Name="Bio" Type="nvarchar(max)" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserResponses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="ResponseID" Type="bigint" Nullable="false" />
+          <Property Name="QuestionTypeID" Type="bigint" Nullable="false" />
+          <Property Name="ResponseTypeID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Attributes_Ref_QuestionType">
+          <End Role="Ref_QuestionType" Type="Self.Ref_QuestionType" Multiplicity="1" />
+          <End Role="Attributes" Type="Self.Attributes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_QuestionType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attributes">
+              <PropertyRef Name="QuestionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attributes_Ref_ResponseType">
+          <End Role="Ref_ResponseType" Type="Self.Ref_ResponseType" Multiplicity="1" />
+          <End Role="Attributes" Type="Self.Attributes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_ResponseType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attributes">
+              <PropertyRef Name="ResponseTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Photo_Ref_PhotoType">
+          <End Role="Ref_PhotoType" Type="Self.Ref_PhotoType" Multiplicity="1" />
+          <End Role="Photo" Type="Self.Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_PhotoType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Photo">
+              <PropertyRef Name="PhotoTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Photo_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Photo" Type="Self.Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Photo">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfileChocies_Ref_MatchType">
+          <End Role="Ref_ChoiceType" Type="Self.Ref_ChoiceType" Multiplicity="1" />
+          <End Role="ProfileChocies" Type="Self.ProfileChocies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_ChoiceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfileChocies">
+              <PropertyRef Name="ChoiceType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfileChocies_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ProfileChocies" Type="Self.ProfileChocies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfileChocies">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfileChocies_User_02">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ProfileChocies" Type="Self.ProfileChocies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfileChocies">
+              <PropertyRef Name="ProfileChoiceUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Responses_Ref_ResponseType">
+          <End Role="Ref_ResponseType" Type="Self.Ref_ResponseType" Multiplicity="1" />
+          <End Role="Responses" Type="Self.Responses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_ResponseType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Responses">
+              <PropertyRef Name="ResponseTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_Ref_QuestionType">
+          <End Role="Ref_QuestionType" Type="Self.Ref_QuestionType" Multiplicity="1" />
+          <End Role="UserResponses" Type="Self.UserResponses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_QuestionType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserResponses">
+              <PropertyRef Name="QuestionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_Ref_ResponseType">
+          <End Role="Ref_ResponseType" Type="Self.Ref_ResponseType" Multiplicity="1" />
+          <End Role="UserResponses" Type="Self.UserResponses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_ResponseType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserResponses">
+              <PropertyRef Name="ResponseTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_Responses">
+          <End Role="Responses" Type="Self.Responses" Multiplicity="1" />
+          <End Role="UserResponses" Type="Self.UserResponses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Responses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserResponses">
+              <PropertyRef Name="ResponseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="UserResponses" Type="Self.UserResponses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserResponses">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TICPuppyLoveDataModelStoreContainer">
+          <EntitySet Name="Attributes" EntityType="Self.Attributes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Photo" EntityType="Self.Photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProfileChocies" EntityType="Self.ProfileChocies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ref_ChoiceType" EntityType="Self.Ref_ChoiceType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ref_Config" EntityType="Self.Ref_Config" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ref_PhotoType" EntityType="Self.Ref_PhotoType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ref_QuestionType" EntityType="Self.Ref_QuestionType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ref_ResponseType" EntityType="Self.Ref_ResponseType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Responses" EntityType="Self.Responses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserResponses" EntityType="Self.UserResponses" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Attributes_Ref_QuestionType" Association="Self.FK_Attributes_Ref_QuestionType">
+            <End Role="Ref_QuestionType" EntitySet="Ref_QuestionType" />
+            <End Role="Attributes" EntitySet="Attributes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attributes_Ref_ResponseType" Association="Self.FK_Attributes_Ref_ResponseType">
+            <End Role="Ref_ResponseType" EntitySet="Ref_ResponseType" />
+            <End Role="Attributes" EntitySet="Attributes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_User" Association="Self.FK_Location_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Location" EntitySet="Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Photo_Ref_PhotoType" Association="Self.FK_Photo_Ref_PhotoType">
+            <End Role="Ref_PhotoType" EntitySet="Ref_PhotoType" />
+            <End Role="Photo" EntitySet="Photo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Photo_User" Association="Self.FK_Photo_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Photo" EntitySet="Photo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfileChocies_Ref_MatchType" Association="Self.FK_ProfileChocies_Ref_MatchType">
+            <End Role="Ref_ChoiceType" EntitySet="Ref_ChoiceType" />
+            <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfileChocies_User" Association="Self.FK_ProfileChocies_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfileChocies_User_02" Association="Self.FK_ProfileChocies_User_02">
+            <End Role="User" EntitySet="User" />
+            <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Responses_Ref_ResponseType" Association="Self.FK_Responses_Ref_ResponseType">
+            <End Role="Ref_ResponseType" EntitySet="Ref_ResponseType" />
+            <End Role="Responses" EntitySet="Responses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_Ref_QuestionType" Association="Self.FK_UserResponses_Ref_QuestionType">
+            <End Role="Ref_QuestionType" EntitySet="Ref_QuestionType" />
+            <End Role="UserResponses" EntitySet="UserResponses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_Ref_ResponseType" Association="Self.FK_UserResponses_Ref_ResponseType">
+            <End Role="Ref_ResponseType" EntitySet="Ref_ResponseType" />
+            <End Role="UserResponses" EntitySet="UserResponses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_Responses" Association="Self.FK_UserResponses_Responses">
+            <End Role="Responses" EntitySet="Responses" />
+            <End Role="UserResponses" EntitySet="UserResponses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_User" Association="Self.FK_UserResponses_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserResponses" EntitySet="UserResponses" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TIC.PuppyLove.DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Attribute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QuestionTypeID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Ref_QuestionType" Relationship="Self.FK_Attributes_Ref_QuestionType" FromRole="Attributes" ToRole="Ref_QuestionType" />
+          <Property Name="ResponseTypeID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Ref_ResponseType" Relationship="TIC.PuppyLove.DataModel.FK_Attributes_Ref_ResponseType" FromRole="Attribute" ToRole="Ref_ResponseType" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="Latitude" Type="Decimal" Precision="18" Scale="15" Nullable="false" />
+          <Property Name="Longitude" Type="Decimal" Precision="18" Scale="15" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Location_User" FromRole="Location" ToRole="User" />
+          <Property Name="Accuracy" Type="Decimal" Nullable="false" Precision="6" Scale="0" />
+          <Property Name="TimeStamp" Type="Decimal" Nullable="false" Precision="13" Scale="0" />
+          <Property Name="SpatialLocation" Type="Geography" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProfileChocy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="ChoiceType" Type="Int64" Nullable="false" />
+          <Property Name="ProfileChoiceUserID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Ref_ChoiceType" Relationship="Self.FK_ProfileChocies_Ref_MatchType" FromRole="ProfileChocies" ToRole="Ref_ChoiceType" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ProfileChocies_User" FromRole="ProfileChocies" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_ProfileChocies_User_02" FromRole="ProfileChocies" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Ref_ChoiceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MatchType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ProfileChocies" Relationship="Self.FK_ProfileChocies_Ref_MatchType" FromRole="Ref_ChoiceType" ToRole="ProfileChocies" />
+        </EntityType>
+        <EntityType Name="Ref_QuestionType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Attributes" Relationship="Self.FK_Attributes_Ref_QuestionType" FromRole="Ref_QuestionType" ToRole="Attributes" />
+          <NavigationProperty Name="UserResponses" Relationship="Self.FK_UserResponses_Ref_QuestionType" FromRole="Ref_QuestionType" ToRole="UserResponses" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DisplayName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Locations" Relationship="Self.FK_Location_User" FromRole="User" ToRole="Location" />
+          <NavigationProperty Name="ProfileChocies" Relationship="Self.FK_ProfileChocies_User" FromRole="User" ToRole="ProfileChocies" />
+          <NavigationProperty Name="ProfileChocies1" Relationship="Self.FK_ProfileChocies_User_02" FromRole="User" ToRole="ProfileChocies" />
+          <NavigationProperty Name="UserResponses" Relationship="Self.FK_UserResponses_User" FromRole="User" ToRole="UserResponses" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="MiddleName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Photos" Relationship="TIC.PuppyLove.DataModel.FK_Photo_User" FromRole="User" ToRole="Photo" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserRespons">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="ResponseID" Type="Int64" Nullable="false" />
+          <Property Name="QuestionTypeID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Ref_QuestionType" Relationship="Self.FK_UserResponses_Ref_QuestionType" FromRole="UserResponses" ToRole="Ref_QuestionType" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserResponses_User" FromRole="UserResponses" ToRole="User" />
+          <Property Name="ResponseTypeID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Ref_ResponseType" Relationship="TIC.PuppyLove.DataModel.FK_UserResponses_Ref_ResponseType" FromRole="UserRespons" ToRole="Ref_ResponseType" />
+          <NavigationProperty Name="Respons" Relationship="TIC.PuppyLove.DataModel.FK_UserResponses_Responses" FromRole="UserRespons" ToRole="Respons" />
+        </EntityType>
+        <Association Name="FK_Attributes_Ref_QuestionType">
+          <End Role="Ref_QuestionType" Type="Self.Ref_QuestionType" Multiplicity="1" />
+          <End Role="Attributes" Type="Self.Attribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_QuestionType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attributes">
+              <PropertyRef Name="QuestionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Location" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfileChocies_Ref_MatchType">
+          <End Role="Ref_ChoiceType" Type="Self.Ref_ChoiceType" Multiplicity="1" />
+          <End Role="ProfileChocies" Type="Self.ProfileChocy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_ChoiceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfileChocies">
+              <PropertyRef Name="ChoiceType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfileChocies_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ProfileChocies" Type="Self.ProfileChocy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfileChocies">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfileChocies_User_02">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ProfileChocies" Type="Self.ProfileChocy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfileChocies">
+              <PropertyRef Name="ProfileChoiceUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_Ref_QuestionType">
+          <End Role="Ref_QuestionType" Type="Self.Ref_QuestionType" Multiplicity="1" />
+          <End Role="UserResponses" Type="Self.UserRespons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_QuestionType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserResponses">
+              <PropertyRef Name="QuestionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="UserResponses" Type="Self.UserRespons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserResponses">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TICPuppyLoveDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Attributes" EntityType="Self.Attribute" />
+          <EntitySet Name="Locations" EntityType="Self.Location" />
+          <EntitySet Name="ProfileChocies" EntityType="Self.ProfileChocy" />
+          <EntitySet Name="Ref_ChoiceType" EntityType="Self.Ref_ChoiceType" />
+          <EntitySet Name="Ref_QuestionType" EntityType="Self.Ref_QuestionType" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserResponses" EntityType="Self.UserRespons" />
+          <AssociationSet Name="FK_Attributes_Ref_QuestionType" Association="Self.FK_Attributes_Ref_QuestionType">
+            <End Role="Ref_QuestionType" EntitySet="Ref_QuestionType" />
+            <End Role="Attributes" EntitySet="Attributes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_User" Association="Self.FK_Location_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfileChocies_Ref_MatchType" Association="Self.FK_ProfileChocies_Ref_MatchType">
+            <End Role="Ref_ChoiceType" EntitySet="Ref_ChoiceType" />
+            <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfileChocies_User" Association="Self.FK_ProfileChocies_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfileChocies_User_02" Association="Self.FK_ProfileChocies_User_02">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_Ref_QuestionType" Association="Self.FK_UserResponses_Ref_QuestionType">
+            <End Role="Ref_QuestionType" EntitySet="Ref_QuestionType" />
+            <End Role="UserResponses" EntitySet="UserResponses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_User" Association="Self.FK_UserResponses_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserResponses" EntitySet="UserResponses" />
+          </AssociationSet>
+          <EntitySet Name="Ref_ResponseType" EntityType="TIC.PuppyLove.DataModel.Ref_ResponseType" />
+          <AssociationSet Name="FK_Attributes_Ref_ResponseType" Association="TIC.PuppyLove.DataModel.FK_Attributes_Ref_ResponseType">
+            <End Role="Ref_ResponseType" EntitySet="Ref_ResponseType" />
+            <End Role="Attribute" EntitySet="Attributes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_Ref_ResponseType" Association="TIC.PuppyLove.DataModel.FK_UserResponses_Ref_ResponseType">
+            <End Role="Ref_ResponseType" EntitySet="Ref_ResponseType" />
+            <End Role="UserRespons" EntitySet="UserResponses" />
+          </AssociationSet>
+          <EntitySet Name="Responses" EntityType="TIC.PuppyLove.DataModel.Respons" />
+          <AssociationSet Name="FK_Responses_Ref_ResponseType" Association="TIC.PuppyLove.DataModel.FK_Responses_Ref_ResponseType">
+            <End Role="Ref_ResponseType" EntitySet="Ref_ResponseType" />
+            <End Role="Respons" EntitySet="Responses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_Responses" Association="TIC.PuppyLove.DataModel.FK_UserResponses_Responses">
+            <End Role="Respons" EntitySet="Responses" />
+            <End Role="UserRespons" EntitySet="UserResponses" />
+          </AssociationSet>
+          <EntitySet Name="Ref_Config" EntityType="TIC.PuppyLove.DataModel.Ref_Config" />
+          <EntitySet Name="Photos" EntityType="TIC.PuppyLove.DataModel.Photo" />
+          <EntitySet Name="Ref_PhotoType" EntityType="TIC.PuppyLove.DataModel.Ref_PhotoType" />
+          <AssociationSet Name="FK_Photo_Ref_PhotoType" Association="TIC.PuppyLove.DataModel.FK_Photo_Ref_PhotoType">
+            <End Role="Ref_PhotoType" EntitySet="Ref_PhotoType" />
+            <End Role="Photo" EntitySet="Photos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Photo_User" Association="TIC.PuppyLove.DataModel.FK_Photo_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Photo" EntitySet="Photos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Ref_ResponseType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResponseType" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Attributes" Relationship="TIC.PuppyLove.DataModel.FK_Attributes_Ref_ResponseType" FromRole="Ref_ResponseType" ToRole="Attribute" />
+          <NavigationProperty Name="UserResponses" Relationship="TIC.PuppyLove.DataModel.FK_UserResponses_Ref_ResponseType" FromRole="Ref_ResponseType" ToRole="UserRespons" />
+          <NavigationProperty Name="Responses" Relationship="TIC.PuppyLove.DataModel.FK_Responses_Ref_ResponseType" FromRole="Ref_ResponseType" ToRole="Respons" />
+        </EntityType>
+        <Association Name="FK_Attributes_Ref_ResponseType">
+          <End Type="TIC.PuppyLove.DataModel.Ref_ResponseType" Role="Ref_ResponseType" Multiplicity="1" />
+          <End Type="TIC.PuppyLove.DataModel.Attribute" Role="Attribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_ResponseType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Attribute">
+              <PropertyRef Name="ResponseTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_Ref_ResponseType">
+          <End Type="TIC.PuppyLove.DataModel.Ref_ResponseType" Role="Ref_ResponseType" Multiplicity="1" />
+          <End Type="TIC.PuppyLove.DataModel.UserRespons" Role="UserRespons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_ResponseType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRespons">
+              <PropertyRef Name="ResponseTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Respons">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Responses" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ResponseTypeID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Ref_ResponseType" Relationship="TIC.PuppyLove.DataModel.FK_Responses_Ref_ResponseType" FromRole="Respons" ToRole="Ref_ResponseType" />
+          <NavigationProperty Name="UserResponses" Relationship="TIC.PuppyLove.DataModel.FK_UserResponses_Responses" FromRole="Respons" ToRole="UserRespons" />
+        </EntityType>
+        <Association Name="FK_Responses_Ref_ResponseType">
+          <End Type="TIC.PuppyLove.DataModel.Ref_ResponseType" Role="Ref_ResponseType" Multiplicity="1" />
+          <End Type="TIC.PuppyLove.DataModel.Respons" Role="Respons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_ResponseType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Respons">
+              <PropertyRef Name="ResponseTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_Responses">
+          <End Type="TIC.PuppyLove.DataModel.Respons" Role="Respons" Multiplicity="1" />
+          <End Type="TIC.PuppyLove.DataModel.UserRespons" Role="UserRespons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Respons">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRespons">
+              <PropertyRef Name="ResponseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Ref_Config">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhotoTypeID" Type="Int64" Nullable="false" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="IsPrimary" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Ref_PhotoType" Relationship="TIC.PuppyLove.DataModel.FK_Photo_Ref_PhotoType" FromRole="Photo" ToRole="Ref_PhotoType" />
+          <NavigationProperty Name="User" Relationship="TIC.PuppyLove.DataModel.FK_Photo_User" FromRole="Photo" ToRole="User" />
+          <Property Name="PhotoImage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ref_PhotoType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhotoType" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Photos" Relationship="TIC.PuppyLove.DataModel.FK_Photo_Ref_PhotoType" FromRole="Ref_PhotoType" ToRole="Photo" />
+        </EntityType>
+        <Association Name="FK_Photo_Ref_PhotoType">
+          <End Type="TIC.PuppyLove.DataModel.Ref_PhotoType" Role="Ref_PhotoType" Multiplicity="1" />
+          <End Type="TIC.PuppyLove.DataModel.Photo" Role="Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ref_PhotoType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Photo">
+              <PropertyRef Name="PhotoTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Photo_User">
+          <End Type="TIC.PuppyLove.DataModel.User" Role="User" Multiplicity="1" />
+          <End Type="TIC.PuppyLove.DataModel.Photo" Role="Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Photo">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TICPuppyLoveDataModelStoreContainer" CdmEntityContainer="TICPuppyLoveDBEntities">
+          <EntitySetMapping Name="Attributes">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Attribute">
+              <MappingFragment StoreEntitySet="Attributes">
+                <ScalarProperty Name="ResponseTypeID" ColumnName="ResponseTypeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="SpatialLocation" ColumnName="SpatialLocation" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Accuracy" ColumnName="Accuracy" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProfileChocies">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.ProfileChocy">
+              <MappingFragment StoreEntitySet="ProfileChocies">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ChoiceType" ColumnName="ChoiceType" />
+                <ScalarProperty Name="ProfileChoiceUserID" ColumnName="ProfileChoiceUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ref_ChoiceType">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Ref_ChoiceType">
+              <MappingFragment StoreEntitySet="Ref_ChoiceType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MatchType" ColumnName="MatchType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ref_QuestionType">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Ref_QuestionType">
+              <MappingFragment StoreEntitySet="Ref_QuestionType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserResponses">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.UserRespons">
+              <MappingFragment StoreEntitySet="UserResponses">
+                <ScalarProperty Name="ResponseTypeID" ColumnName="ResponseTypeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ResponseID" ColumnName="ResponseID" />
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ref_ResponseType">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Ref_ResponseType">
+              <MappingFragment StoreEntitySet="Ref_ResponseType">
+                <ScalarProperty Name="ResponseType" ColumnName="ResponseType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Responses">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Respons">
+              <MappingFragment StoreEntitySet="Responses">
+                <ScalarProperty Name="ResponseTypeID" ColumnName="ResponseTypeID" />
+                <ScalarProperty Name="Responses" ColumnName="Responses" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ref_Config">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Ref_Config">
+              <MappingFragment StoreEntitySet="Ref_Config">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Photos">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Photo">
+              <MappingFragment StoreEntitySet="Photo">
+                <ScalarProperty Name="PhotoImage" ColumnName="PhotoImage" />
+                <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PhotoTypeID" ColumnName="PhotoTypeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ref_PhotoType">
+            <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Ref_PhotoType">
+              <MappingFragment StoreEntitySet="Ref_PhotoType">
+                <ScalarProperty Name="PhotoType" ColumnName="PhotoType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

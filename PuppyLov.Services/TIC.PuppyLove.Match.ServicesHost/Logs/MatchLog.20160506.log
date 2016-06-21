@@ -1,0 +1,13 @@
+[START]
+ 2016-05-06 20:43:34,089 INFO  [8] ProfileApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+ 2016-05-06 20:44:20,096 ERROR [8] ProfileApp: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TIC.PuppyLove.Services.Logic.Match.Data.DataManager.ExcludeNoPreferenceFromProfile(List`1 matchProfile) in c:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Logic.Match\Data\DataManager.cs:line 32
+   at TIC.PuppyLove.Services.Logic.Match.MatchLogic.GetMatchByLocation(MatchRequest request) in c:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Logic.Match\Logic\MatchLogic.cs:line 98
+
+ 2016-05-06 20:44:31,709 INFO  [49] ProfileApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[START]
+ 2016-05-06 20:48:55,782 INFO  [9] ProfileApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+

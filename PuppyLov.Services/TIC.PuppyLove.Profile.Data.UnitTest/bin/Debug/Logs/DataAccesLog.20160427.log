@@ -1,0 +1,55 @@
+[START]
+ 2016-04-27 07:15:26,273 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-27 07:30:52,045 INFO  [10] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+ 2016-04-27 07:32:57,581 ERROR [10] TestDBAccessApp: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TIC.PuppyLove.Profile.DataModel.ProfileResponse.CreateProfileResponseInstance() in c:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Profile.DataModel\ModelDTO\ProfileResponse.cs:line 19
+   at TIC.PuppyLove.Services.Logic.Match.Data.DataManager.<GetNoPreferenceFromProfile>b__1(ProfileResponse resp) in c:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Logic.Match\Data\DataManager.cs:line 41
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at TIC.PuppyLove.Services.Logic.Match.Data.DataManager.GetNoPreferenceFromProfile(List`1 matchProfile) in c:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Logic.Match\Data\DataManager.cs:line 40
+   at TIC.PuppyLove.Services.Logic.Match.MatchLogic.GetMatchByLocation(MatchRequest request) in c:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Logic.Match\Logic\MatchLogic.cs:line 208
+
+[END  ]
+[START]
+ 2016-04-27 07:35:56,010 INFO  [10] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[START]
+ 2016-04-27 07:43:01,216 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-27 09:06:31,782 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[START]
+ 2016-04-27 09:06:55,753 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-27 11:16:57,667 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-27 14:06:35,700 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[START]
+ 2016-04-27 14:11:54,760 INFO  [10] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-27 20:42:26,095 INFO  [10] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-27 21:14:30,489 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-27 21:54:40,780 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]

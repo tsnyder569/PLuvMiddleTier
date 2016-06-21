@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TICPuppyLoveDataModelStoreContainer" CdmEntityContainer="TICPuppyLoveDBEntities">
+    <EntitySetMapping Name="Attributes">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Attribute">
+        <MappingFragment StoreEntitySet="Attributes">
+          <ScalarProperty Name="ResponseTypeID" ColumnName="ResponseTypeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="SpatialLocation" ColumnName="SpatialLocation" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Accuracy" ColumnName="Accuracy" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfileChocies">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.ProfileChocy">
+        <MappingFragment StoreEntitySet="ProfileChocies">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ChoiceType" ColumnName="ChoiceType" />
+          <ScalarProperty Name="ProfileChoiceUserID" ColumnName="ProfileChoiceUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ref_ChoiceType">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Ref_ChoiceType">
+        <MappingFragment StoreEntitySet="Ref_ChoiceType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MatchType" ColumnName="MatchType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ref_QuestionType">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Ref_QuestionType">
+        <MappingFragment StoreEntitySet="Ref_QuestionType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserResponses">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.UserRespons">
+        <MappingFragment StoreEntitySet="UserResponses">
+          <ScalarProperty Name="ResponseTypeID" ColumnName="ResponseTypeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ResponseID" ColumnName="ResponseID" />
+          <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ref_ResponseType">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Ref_ResponseType">
+        <MappingFragment StoreEntitySet="Ref_ResponseType">
+          <ScalarProperty Name="ResponseType" ColumnName="ResponseType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Responses">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Respons">
+        <MappingFragment StoreEntitySet="Responses">
+          <ScalarProperty Name="ResponseTypeID" ColumnName="ResponseTypeID" />
+          <ScalarProperty Name="Responses" ColumnName="Responses" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ref_Config">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Ref_Config">
+        <MappingFragment StoreEntitySet="Ref_Config">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Photos">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Photo">
+        <MappingFragment StoreEntitySet="Photo">
+          <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PhotoTypeID" ColumnName="PhotoTypeID" />
+          <ScalarProperty Name="Photo1" ColumnName="Photo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ref_PhotoType">
+      <EntityTypeMapping TypeName="TIC.PuppyLove.DataModel.Ref_PhotoType">
+        <MappingFragment StoreEntitySet="Ref_PhotoType">
+          <ScalarProperty Name="PhotoType" ColumnName="PhotoType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

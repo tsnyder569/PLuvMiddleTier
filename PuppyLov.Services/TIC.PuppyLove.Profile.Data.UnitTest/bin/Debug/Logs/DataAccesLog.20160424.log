@@ -1,0 +1,12 @@
+[START]
+ 2016-04-24 20:24:41,055 INFO  [14] TestDBAccessApp: GetMatchByLocationGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-24 20:47:28,013 INFO  [10] TestDBAccessApp: GetMatchByLocationGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-24 21:07:56,454 INFO  [10] TestDBAccessApp: GetMatchByLocationGetMatchByLocation
+
+[END  ]

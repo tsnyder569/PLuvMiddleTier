@@ -1,0 +1,27 @@
+[START]
+ 2016-04-25 18:01:52,098 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-25 18:16:13,929 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-25 18:19:27,414 INFO  [10] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-25 18:31:29,481 INFO  [10] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-25 18:33:33,001 INFO  [12] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]
+[START]
+ 2016-04-25 20:26:51,644 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[START]
+ 2016-04-25 20:28:58,670 INFO  [11] TestDBAccessApp: Match GetMatchByLocation, Method NameGetMatchByLocation
+
+[END  ]

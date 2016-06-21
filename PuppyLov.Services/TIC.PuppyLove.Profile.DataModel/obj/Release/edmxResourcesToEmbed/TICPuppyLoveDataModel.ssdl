@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TIC.PuppyLove.DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Attributes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="QuestionTypeID" Type="bigint" Nullable="false" />
+    <Property Name="ResponseTypeID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="Latitude" Type="numeric" Precision="18" Scale="15" Nullable="false" />
+    <Property Name="Longitude" Type="numeric" Precision="18" Scale="15" Nullable="false" />
+    <Property Name="Accuracy" Type="numeric" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="TimeStamp" Type="numeric" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="SpatialLocation" Type="geography" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Photo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhotoTypeID" Type="bigint" Nullable="false" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="IsPrimary" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProfileChocies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="ChoiceType" Type="bigint" Nullable="false" />
+    <Property Name="ProfileChoiceUserID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ref_ChoiceType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MatchType" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ref_Config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Value" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ref_PhotoType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhotoType" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ref_QuestionType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionType" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ref_ResponseType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ResponseType" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Responses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Responses" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ResponseTypeID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DisplayName" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Birthday" Type="date" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="500" />
+    <Property Name="Bio" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserResponses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="ResponseID" Type="bigint" Nullable="false" />
+    <Property Name="QuestionTypeID" Type="bigint" Nullable="false" />
+    <Property Name="ResponseTypeID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Attributes_Ref_QuestionType">
+    <End Role="Ref_QuestionType" Type="Self.Ref_QuestionType" Multiplicity="1" />
+    <End Role="Attributes" Type="Self.Attributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref_QuestionType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Attributes">
+        <PropertyRef Name="QuestionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attributes_Ref_ResponseType">
+    <End Role="Ref_ResponseType" Type="Self.Ref_ResponseType" Multiplicity="1" />
+    <End Role="Attributes" Type="Self.Attributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref_ResponseType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Attributes">
+        <PropertyRef Name="ResponseTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Location" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Photo_Ref_PhotoType">
+    <End Role="Ref_PhotoType" Type="Self.Ref_PhotoType" Multiplicity="1" />
+    <End Role="Photo" Type="Self.Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref_PhotoType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="PhotoTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Photo_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Photo" Type="Self.Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileChocies_Ref_MatchType">
+    <End Role="Ref_ChoiceType" Type="Self.Ref_ChoiceType" Multiplicity="1" />
+    <End Role="ProfileChocies" Type="Self.ProfileChocies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref_ChoiceType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfileChocies">
+        <PropertyRef Name="ChoiceType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileChocies_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="ProfileChocies" Type="Self.ProfileChocies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfileChocies">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileChocies_User_02">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="ProfileChocies" Type="Self.ProfileChocies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProfileChocies">
+        <PropertyRef Name="ProfileChoiceUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Responses_Ref_ResponseType">
+    <End Role="Ref_ResponseType" Type="Self.Ref_ResponseType" Multiplicity="1" />
+    <End Role="Responses" Type="Self.Responses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref_ResponseType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Responses">
+        <PropertyRef Name="ResponseTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserResponses_Ref_QuestionType">
+    <End Role="Ref_QuestionType" Type="Self.Ref_QuestionType" Multiplicity="1" />
+    <End Role="UserResponses" Type="Self.UserResponses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref_QuestionType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserResponses">
+        <PropertyRef Name="QuestionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserResponses_Ref_ResponseType">
+    <End Role="Ref_ResponseType" Type="Self.Ref_ResponseType" Multiplicity="1" />
+    <End Role="UserResponses" Type="Self.UserResponses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref_ResponseType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserResponses">
+        <PropertyRef Name="ResponseTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserResponses_Responses">
+    <End Role="Responses" Type="Self.Responses" Multiplicity="1" />
+    <End Role="UserResponses" Type="Self.UserResponses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Responses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserResponses">
+        <PropertyRef Name="ResponseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserResponses_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserResponses" Type="Self.UserResponses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserResponses">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TICPuppyLoveDataModelStoreContainer">
+    <EntitySet Name="Attributes" EntityType="Self.Attributes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Photo" EntityType="Self.Photo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProfileChocies" EntityType="Self.ProfileChocies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ref_ChoiceType" EntityType="Self.Ref_ChoiceType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ref_Config" EntityType="Self.Ref_Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ref_PhotoType" EntityType="Self.Ref_PhotoType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ref_QuestionType" EntityType="Self.Ref_QuestionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ref_ResponseType" EntityType="Self.Ref_ResponseType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Responses" EntityType="Self.Responses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserResponses" EntityType="Self.UserResponses" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Attributes_Ref_QuestionType" Association="Self.FK_Attributes_Ref_QuestionType">
+      <End Role="Ref_QuestionType" EntitySet="Ref_QuestionType" />
+      <End Role="Attributes" EntitySet="Attributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attributes_Ref_ResponseType" Association="Self.FK_Attributes_Ref_ResponseType">
+      <End Role="Ref_ResponseType" EntitySet="Ref_ResponseType" />
+      <End Role="Attributes" EntitySet="Attributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_User" Association="Self.FK_Location_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Location" EntitySet="Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Photo_Ref_PhotoType" Association="Self.FK_Photo_Ref_PhotoType">
+      <End Role="Ref_PhotoType" EntitySet="Ref_PhotoType" />
+      <End Role="Photo" EntitySet="Photo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Photo_User" Association="Self.FK_Photo_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Photo" EntitySet="Photo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileChocies_Ref_MatchType" Association="Self.FK_ProfileChocies_Ref_MatchType">
+      <End Role="Ref_ChoiceType" EntitySet="Ref_ChoiceType" />
+      <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileChocies_User" Association="Self.FK_ProfileChocies_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileChocies_User_02" Association="Self.FK_ProfileChocies_User_02">
+      <End Role="User" EntitySet="User" />
+      <End Role="ProfileChocies" EntitySet="ProfileChocies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Responses_Ref_ResponseType" Association="Self.FK_Responses_Ref_ResponseType">
+      <End Role="Ref_ResponseType" EntitySet="Ref_ResponseType" />
+      <End Role="Responses" EntitySet="Responses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserResponses_Ref_QuestionType" Association="Self.FK_UserResponses_Ref_QuestionType">
+      <End Role="Ref_QuestionType" EntitySet="Ref_QuestionType" />
+      <End Role="UserResponses" EntitySet="UserResponses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserResponses_Ref_ResponseType" Association="Self.FK_UserResponses_Ref_ResponseType">
+      <End Role="Ref_ResponseType" EntitySet="Ref_ResponseType" />
+      <End Role="UserResponses" EntitySet="UserResponses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserResponses_Responses" Association="Self.FK_UserResponses_Responses">
+      <End Role="Responses" EntitySet="Responses" />
+      <End Role="UserResponses" EntitySet="UserResponses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserResponses_User" Association="Self.FK_UserResponses_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserResponses" EntitySet="UserResponses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

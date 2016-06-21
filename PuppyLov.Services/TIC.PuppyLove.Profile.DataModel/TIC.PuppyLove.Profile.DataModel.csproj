@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD91D06C-F8B0-490B-9233-BA6235031C12}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TIC.PuppyLove.Profile.DataModel</RootNamespace>
+    <AssemblyName>TIC.PuppyLove.Profile.DataModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attribute.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDTO\Choice.cs" />
+    <Compile Include="FormattedEntityValidationException.cs" />
+    <Compile Include="Location.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDTO\ConfigDTO.cs" />
+    <Compile Include="ModelDTO\LocationDTO.cs" />
+    <Compile Include="ModelDTO\PhotoDTO.cs" />
+    <Compile Include="ModelDTO\PLuvQuestion.cs" />
+    <Compile Include="ModelDTO\PLuvQuestionSurvey.cs" />
+    <Compile Include="ModelDTO\Profile.cs" />
+    <Compile Include="ModelDTO\QuestionEntity.cs" />
+    <Compile Include="ModelDTO\PhotoTypeDTO.cs" />
+    <Compile Include="ModelDTO\ResponseEntity.cs" />
+    <Compile Include="Photo.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileChocy.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDTO\ProfileChoiceTypeEnum.cs" />
+    <Compile Include="ModelDTO\ProfileResponse.cs" />
+    <Compile Include="ModelDTO\ProfileUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModelDTO\QuestionTypeEnum.cs" />
+    <Compile Include="Ref_ChoiceType.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ref_Config.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ref_PhotoType.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ref_QuestionType.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ref_ResponseType.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Respons.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TICPuppyLoveDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TICPuppyLoveDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TICPuppyLoveDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TICPuppyLoveDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TICPuppyLoveDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TICPuppyLoveDbContext.cs" />
+    <Compile Include="TICPuppyLoveDbContext_Config.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRespons.cs">
+      <DependentUpon>TICPuppyLoveDataModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="TICPuppyLoveDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TICPuppyLoveDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="TICPuppyLoveDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TICPuppyLoveDataModel.edmx</DependentUpon>
+      <LastGenOutput>TICPuppyLoveDataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="TICPuppyLoveDataModel.edmx.diagram">
+      <DependentUpon>TICPuppyLoveDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="TICPuppyLoveDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TICPuppyLoveDataModel.edmx</DependentUpon>
+      <LastGenOutput>TICPuppyLoveDataModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TIC.PuppyLove.Services.Contracts.Common\TIC.PuppyLove.Services.Contracts.Common.csproj">
+      <Project>{7faa9f71-2830-4dd7-bcd4-5db5df553c57}</Project>
+      <Name>TIC.PuppyLove.Services.Contracts.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TIC.PuppyLove.Services.Contracts.Config\TIC.PuppyLove.Services.Contracts.Config.csproj">
+      <Project>{fecf51f4-0918-4459-88ce-08338cc4385e}</Project>
+      <Name>TIC.PuppyLove.Services.Contracts.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TIC.PuppyLove.Services.Contracts.Location\TIC.PuppyLove.Services.Contracts.Location.csproj">
+      <Project>{51fc7fd0-617a-41d6-94ea-d7cccaa60a72}</Project>
+      <Name>TIC.PuppyLove.Services.Contracts.Location</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TIC.PuppyLove.Services.Contracts.Profile\TIC.PuppyLove.Services.Contracts.Profile.csproj">
+      <Project>{a8afa77f-9193-48b6-905a-5014df7d4705}</Project>
+      <Name>TIC.PuppyLove.Services.Contracts.Profile</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

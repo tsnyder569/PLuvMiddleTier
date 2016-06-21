@@ -1,0 +1,7 @@
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Match\bin\Release\TIC.PuppyLove.Services.Contracts.Match.dll
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Match\bin\Release\TIC.PuppyLove.Services.Contracts.Match.pdb
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Match\bin\Release\TIC.PuppyLove.Services.Contracts.Common.dll
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Match\bin\Release\TIC.PuppyLove.Services.Contracts.Common.pdb
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Match\obj\Release\TIC.PuppyLove.Services.Contracts.Match.csprojResolveAssemblyReference.cache
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Match\obj\Release\TIC.PuppyLove.Services.Contracts.Match.dll
+C:\TIC\Cordova\PuppyLuv\PuppyLove\PuppyLuv\PuppyLov.Services\TIC.PuppyLove.Services.Contracts.Match\obj\Release\TIC.PuppyLove.Services.Contracts.Match.pdb

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="TIC.PuppyLove.Services.Logic.Profile.ProfileLogic" Factory="TIC.PuppyLove.Profile.ServicesHost.HostFactory" %>
